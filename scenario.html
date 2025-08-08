@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>おすすめシナリオ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="siteHeader">
+    <div class="logo">
+      <img src="img/i7w3b.png" alt="サイトロゴ">
+    </div>
+    <nav class="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#trpg">TRPGとは</a></li>
+        <li><a href="index.html#pc">PCとは</a></li>
+        <li><a href="scenario.html">おすすめシナリオ</a></li>
+        <li><a href="request.html">リクエスト</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contentSection" id="scenarioIntro">
+     <img src="img/s92dh.png" alt="紹介画像">
+    <p>
+      TRPGにおける「シナリオ」とは、物語の流れや登場人物、舞台設定、事件の概要などをまとめた、ゲーム進行の指針となる台本のようなものです。
+      プレイヤーキャラクター（PC）はこのシナリオに従って行動し、物語を紡いでいきます。シナリオによってゲームの雰囲気や難易度、展開が大きく変わるため、
+      自分の好みに合ったものを選ぶことが重要です。
+    </p>
+  </section>
+
+  <main class="scenarioMain">
+    <h1>おすすめシナリオ一覧</h1>
+
+    <div>
+      <label for="genreFilter">ジャンルで絞り込む：</label>
+      <select id="genreFilter">
+        <option value="all">すべて</option>
+        <option value="ホラー">ホラー</option>
+        <option value="ファンタジー">ファンタジー</option>
+        <option value="SF">SF</option>
+      </select>
+    </div>
+
+    <div id="scenarioList" class="scenarioGrid"></div>
+  </main>
+
+  <footer class="siteFooter">
+    <div class="footerContent">
+      <p>&copy; 2025 TRPGサイト. All rights reserved.</p>
+      <nav class="footerNav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="index.html#trpg">TRPGとは</a></li>
+          <li><a href="index.html#pc">PCとは</a></li>
+          <li><a href="scenario.html">おすすめシナリオ</a></li>
+          <li><a href="request.html">リクエスト</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="js/scenario.js" defer></script>
+
+</body>
+
+</html>

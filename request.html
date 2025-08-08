@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>リクエストフォーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="siteHeader">
+    <div class="logo">
+      <img src="img/i7w3b.png" alt="サイトロゴ" />
+    </div>
+    <nav class="mainNav">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#trpg">TRPGとは</a></li>
+        <li><a href="index.html#pc">PCとは</a></li>
+        <li><a href="scenario.html">おすすめシナリオ</a></li>
+        <li><a href="request.html">リクエスト</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contentSection">
+    <h1>リクエストフォーム</h1>
+    <p>やりたいシナリオやご要望がありましたら、こちらからお気軽にお送りください！</p>
+    <form id="requestForm" novalidate>
+      <label for="name">お名前<span aria-hidden="true">*</span></label>
+      <input type="text" id="name" name="name" required placeholder="例：山田 太郎" />
+      <div class="errorMessage" id="nameError"></div>
+
+      <label for="email">メールアドレス<span aria-hidden="true">*</span></label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com" />
+      <div class="errorMessage" id="emailError"></div>
+
+      <label for="request">リクエスト内容<span aria-hidden="true">*</span></label>
+      <textarea id="request" name="request" rows="5" required placeholder="やりたいシナリオの内容やご希望をお書きください"></textarea>
+      <div class="errorMessage" id="requestError"></div>
+
+      <button type="submit">送信する</button>
+    </form>
+
+    <p id="formMessage" class="successMessage" aria-live="polite"></p>
+  </main>
+
+  <footer class="siteFooter">
+    <div class="footerContent">
+      <p>&copy; 2025 TRPGサイト. All rights reserved.</p>
+      <nav class="footerNav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="index.html#trpg">TRPGとは</a></li>
+          <li><a href="index.html#pc">PCとは</a></li>
+          <li><a href="scenario.html">おすすめシナリオ</a></li>
+          <li><a href="request.html">リクエスト</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/request.js" defer></script>
+</body>
+
+</html>

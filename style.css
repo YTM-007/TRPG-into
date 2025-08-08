@@ -1,0 +1,332 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding-top: 100px;
+  background-color: #E0DED7;
+  /* 背景色を変更 */
+  font-family: sans-serif;
+}
+
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: rgba(44, 95, 74, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 100;
+  flex-wrap: wrap;
+  transition: top 0.3s ease;
+  /* スムーズな動き */
+}
+
+/* ヘッダーを隠す時 */
+.siteHeader.hide {
+  top: -100px;
+  /* ヘッダーの高さ分だけ上に隠す */
+}
+
+.logo img {
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.mainNav {
+  max-width: calc(100% - 150px);
+  /* 150pxはロゴ＋余白の想定 */
+  overflow-x: auto;
+}
+
+.mainNav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.mainNav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.mainNav a:hover {
+  color: #ffcc00;
+}
+
+/* ===== レスポンシブ対応 ===== */
+@media screen and (max-width: 768px) {
+  .siteHeader {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .mainNav ul {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .mainNav a {
+    font-size: 16px;
+  }
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* 背景 */
+.background {
+  position: relative;
+  /* bandの基準に */
+  width: 100%;
+  height: 740px;
+  background-image: url('img/pexels-juanpphotoandvideo-877971.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  margin-top: -100px;
+  /* ヘッダー分を上にずらすのはOK */
+}
+
+.band {
+  position: absolute;
+  top: 370px;
+  /* 背景の上から370px */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(44, 95, 74, 0.8);
+  z-index: 1;
+}
+
+.slider {
+  position: absolute;
+  top: 209px;
+  /* bandの下にちょうど来る位置 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 394px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.slideLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* スライド画像 */
+.slide {
+  display: none;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.slide.active {
+  display: block;
+}
+
+.slider img {
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+.contentSection {
+  margin-top: 51px;
+  /* ヒーローセクションとの間隔 */
+  padding-bottom: 51px;
+  /* 下に余白を追加 */
+  text-align: center;
+  /* 画像を中央寄せしたい場合 */
+  z-index: 50;
+}
+
+.contentSection img {
+  max-width: 100%;
+  /* レスポンシブ対応 */
+  height: auto;
+}
+
+.textBlock {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+.siteFooter {
+  background-color: rgba(44, 95, 74, 0.8);
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 80px;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footerNav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerNav a:hover {
+  color: #ffcc00;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* おすすめシナリオページ */
+
+#scenarioIntro {
+  background: linear-gradient(to right, #f7f9fc, #eef3f9);
+  border-left: 6px solid #48A76A;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin: 2em auto;
+  max-width: 900px;
+  font-family: "Yu Gothic", "Helvetica", sans-serif;
+}
+
+
+#scenarioIntro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+.scenarioGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+.scenarioCard {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 250px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.scenarioCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* リクエストページ */
+
+.contentSection form {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Yu Gothic", "Helvetica", sans-serif;
+}
+
+.contentSection label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #2c5f4a;
+}
+
+.contentSection input[type="text"],
+.contentSection input[type="email"],
+.contentSection textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.contentSection input[type="text"]:focus,
+.contentSection input[type="email"]:focus,
+.contentSection textarea:focus {
+  border-color: #48a76a;
+  outline: none;
+  background-color: #e9f3ea;
+}
+
+.contentSection button[type="submit"] {
+  background-color: #48a76a;
+  color: white;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contentSection button[type="submit"]:hover {
+  background-color: #367145;
+}
+
+.errorMessage {
+  color: #cc3333;
+  margin-top: -1em;
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+}
+
+.successMessage {
+  color: #2c5f4a;
+  font-weight: bold;
+  margin-top: 1em;
+}
